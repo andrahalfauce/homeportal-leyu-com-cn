@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK体育 - 快速识别网站用途与核心服务</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #1e2a3a;
+            line-height: 1.6;
+        }
+
+        /* 深色头图 Hero */
+        .hero {
+            background: linear-gradient(145deg, #0b1a2e 0%, #1c3448 100%);
+            color: #f0f5fa;
+            padding: 4.5rem 1.5rem;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .hero .sub {
+            font-size: 1.2rem;
+            max-width: 720px;
+            margin: 0 auto;
+            opacity: 0.88;
+            font-weight: 300;
+        }
+
+        .hero .tagline {
+            margin-top: 1.8rem;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 0.5rem 1.6rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* 正文浅色区容器 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3.5rem;
+        }
+
+        /* 卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0 3rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 20, 40, 0.06);
+            padding: 1.8rem 1.5rem;
+            transition: transform 0.2s, box-shadow 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 20, 40, 0.12);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: #0b1a2e;
+            border-left: 4px solid #306c9f;
+            padding-left: 0.7rem;
+        }
+
+        .card p {
+            color: #2c3f54;
+            font-size: 0.98rem;
+        }
+
+        /* 强调色 */
+        a {
+            color: #1f6390;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            color: #0e4164;
+            border-bottom: 1px solid #1f6390;
+        }
+
+        /* 适合人群卡片特殊标志 */
+        .audience-tag {
+            display: inline-block;
+            background: #e6edf5;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #1f4a6e;
+            margin-top: 0.6rem;
+        }
+
+        /* 自然链接段落 */
+        .link-paragraph {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 2.2rem;
+            margin: 2.5rem 0 2rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e2eaf2;
+        }
+
+        .link-paragraph p {
+            font-size: 1.04rem;
+            margin-bottom: 1rem;
+        }
+
+        .link-paragraph p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-badge {
+            display: inline-block;
+            background: #1f6390;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 1rem;
+            border-radius: 50px;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        /* FAQ 摘要折叠样式（简洁） */
+        .faq-summary {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e2eaf2;
+            margin: 2rem 0;
+        }
+
+        .faq-item {
+            padding: 0.9rem 0;
+            border-bottom: 1px solid #eef2f7;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            color: #0b1a2e;
+            margin-bottom: 0.25rem;
+        }
+
+        .faq-item span {
+            color: #3d536a;
+            font-size: 0.95rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .hero .sub {
+                font-size: 1rem;
+            }
+            .card-grid {
+                gap: 1.4rem;
+            }
+            .container {
+                padding: 1.5rem 1rem 3rem;
+            }
+            .link-paragraph {
+                padding: 1.5rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图 -->
+    <header class="hero">
+        <h1>MK体育 · 用信息卡片快速识别</h1>
+        <p class="sub">一个聚焦体育内容与实用服务的站点，从入口就能看清用途与价值。</p>
+        <div class="tagline">⚡ 清晰分类 · 真实场景 · 自然引导</div>
+    </header>
+
+    <main class="container">
+
+        <!-- 主视觉卡片区：用途卡片 -->
+        <div class="card-grid">
+            <div class="card">
+                <h3>📋 赛事与数据</h3>
+                <p>提供主要体育项目的赛程、实时比分与历史数据。覆盖足球、篮球、网球等项目，信息结构清晰，便于快速查阅。</p>
+            </div>
+            <div class="card">
+                <h3>🧭 内容导航</h3>
+                <p>按运动类别与热门赛事整理板块，减少搜索成本。无论关注联赛还是综合性运动会，都能找到对应入口。</p>
+            </div>
+            <div class="card">
+                <h3>📌 实用工具</h3>
+                <p>包含简易赛程表、队伍对比、近期看点摘要等轻量功能，辅助观赛决策，提升日常使用效率。</p>
+            </div>
+        </div>
+
+        <!-- 适合人群 -->
+        <h2 style="font-size:1.6rem; font-weight:500; color:#0b1a2e; margin-bottom:0.5rem;">适合这样的人使用</h2>
+        <div class="card-grid" style="margin-top:0.8rem;">
+            <div class="card">
+                <h3>🏟️ 日常体育迷</h3>
+                <p>想快速获取比赛结果、下一轮对阵，或者回顾关键数据。无需在多个页面之间跳转。</p>
+                <span class="audience-tag">赛程党</span>
+            </div>
+            <div class="card">
+                <h3>📊 轻度分析用户</h3>
+                <p>关注球队近期状态、交锋记录。网站提供简洁的数据对比，适合赛前快速浏览。</p>
+                <span class="audience-tag">数据向</span>
+            </div>
+            <div class="card">
+                <h3>🗂️ 多项目观众</h3>
+                <p>同时关注足球、篮球等多个项目，想在一个站点内完成切换，避免安装多个应用。</p>
+                <span class="audience-tag">聚合派</span>
+            </div>
+        </div>
+
+        <!-- 自然链接段落 (将 MK体育 嵌入句子) -->
+        <div class="link-paragraph">
+            <div class="highlight-badge">🔗 站点入口</div>
+            <p>
+                如果你正在寻找一个结构清晰的体育信息站，可以试试 <a href="https://roots-mk.com">MK体育</a>。从赛程安排到队伍数据，页面都按卡片化方式组织，不需要层层菜单就能看到核心内容。
+            </p>
+            <p>
+                日常关注欧洲联赛或NBA的用户，会发现首页的导航直接对应主要赛事。另外，站内也整合了一些轻量的观赛辅助功能，适合在比赛日快速查阅。
+            </p>
+            <p>
+                对于只是想了解某一项运动近期动态的人，<a href="https://roots-mk.com">MK体育</a> 的板块划分比较直观，减少信息过载。整体体验偏向实用、干净。
+            </p>
+        </div>
+
+        <!-- FAQ 摘要 (两个常见问题) -->
+        <div class="faq-summary">
+            <h3 style="font-size:1.3rem; font-weight:500; margin-bottom:0.8rem; color:#0b1a2e;">❓ 常见疑问摘要</h3>
+            <div class="faq-item">
+                <strong>这个网站主要提供什么？</strong>
+                <span>体育赛事数据、赛程导航与轻量工具。内容覆盖足球、篮球、网球等主流项目，更新节奏跟随主要联赛。</span>
+            </div>
+            <div class="faq-item">
+                <strong>需要注册才能使用吗？</strong>
+                <span>不需要。网站内容对访客直接开放，浏览赛程和数据无需登录。部分个性化功能可能后续提供。</span>
+            </div>
+        </div>
+
+        <!-- 一段简洁的提示说明 -->
+        <div style="background: #e9f0f7; border-radius: 20px; padding: 1.6rem 2rem; margin: 1.8rem 0; border-left: 5px solid #1f6390;">
+            <p style="font-size:0.98rem; color:#1e3a53;">
+                💡 <strong>提示：</strong> 页面结构偏向信息卡片式，主要目的是让新访客快速理解用途。如果你对具体赛事的数据呈现有更多疑问，可以直接在站内浏览对应板块，内容组织比传统列表更直观。
+            </p>
+        </div>
+
+        <!-- 结尾简单一行 (无链接) -->
+        <div style="text-align: center; margin-top: 3rem; color: #5b7088; font-size: 0.9rem; border-top: 1px solid #dce4ed; padding-top: 1.8rem;">
+            <span>基于真实功能整理 · 卡片式入口 · 2025</span>
+        </div>
+
+    </main>
+</body>
+</html>
